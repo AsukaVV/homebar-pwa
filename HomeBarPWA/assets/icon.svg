@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="家中酒柜">
-  <rect width="512" height="512" rx="96" fill="#173f3c"/>
-  <circle cx="356" cy="142" r="52" fill="#f1c66d"/>
-  <path d="M167 119h178l-28 179c-7 46-47 80-94 80s-87-34-94-80L101 119h66Z" fill="#fffdf8"/>
-  <path d="M155 167h136c-16 43-54 64-114 64-8 0-16-1-25-2l3-62Z" fill="#b84c5a" opacity=".9"/>
-  <path d="M223 378v54M160 432h126" stroke="#fffdf8" stroke-width="28" stroke-linecap="round"/>
-</svg>
