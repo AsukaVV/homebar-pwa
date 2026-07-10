@@ -1,0 +1,19 @@
+{
+  "name": "家中酒柜",
+  "short_name": "酒柜",
+  "description": "记录家里的酒和材料，根据灵感随机生成调酒配方。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ec",
+  "theme_color": "#173f3c",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
