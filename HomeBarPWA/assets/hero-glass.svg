@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" role="img" aria-label="调酒杯">
+  <rect width="520" height="420" rx="24" fill="#f7f4ec"/>
+  <circle cx="377" cy="113" r="56" fill="#f1c66d"/>
+  <path d="M148 96h219l-34 202c-8 50-51 87-102 87s-94-37-102-87L95 96h53Z" fill="#fffdf8" stroke="#173f3c" stroke-width="10"/>
+  <path d="M140 166h167c-17 54-62 80-135 80-10 0-21-1-32-2v-78Z" fill="#b84c5a"/>
+  <path d="M230 385v-56M165 385h130" stroke="#173f3c" stroke-width="18" stroke-linecap="round"/>
+  <path d="M394 90c39 26 46 64 20 113" stroke="#1d6b63" stroke-width="12" stroke-linecap="round" fill="none"/>
+</svg>
