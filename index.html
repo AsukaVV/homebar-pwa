@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#173f3c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="家中酒柜">
+    <title>家中酒柜</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="assets/icon.svg">
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=34">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Home Bar</p>
+          <h1>家中酒柜</h1>
+        </div>
+        <button class="icon-button" id="installButton" type="button" title="添加到主屏幕" hidden>
+          <span aria-hidden="true">＋</span>
+        </button>
+      </header>
+
+      <main>
+        <section class="view active" id="inspireView" aria-labelledby="inspireTitle">
+          <div class="inspire-grid">
+            <div class="prompt-panel">
+              <div class="section-title">
+                <p class="eyebrow">Inspiration</p>
+                <h2 id="inspireTitle">今天想喝什么感觉？</h2>
+              </div>
+              <label class="field-label" for="moodInput">灵感</label>
+              <textarea id="moodInput" rows="4" placeholder="比如：雨天、海边、清爽、不太甜、像午夜散步"></textarea>
+
+              <div class="field-row">
+                <label class="field-label" for="strengthRange">酒感</label>
+                <output id="strengthLabel" for="strengthRange">适中</output>
+              </div>
+              <input id="strengthRange" type="range" min="1" max="5" value="3">
+
+              <div class="field-row">
+                <label class="field-label" for="serveMode">喝法</label>
+                <select id="serveMode">
+                  <option value="auto">让 App 判断</option>
+                  <option value="short">短饮</option>
+                  <option value="long">长饮</option>
+                  <option value="stirred">搅拌</option>
+                  <option value="shaken">摇合</option>
+                </select>
+              </div>
+
+              <div>
+                <p class="field-label">味道方向</p>
+                <div class="tag-grid" id="flavorTags"></div>
+              </div>
+
+              <button class="primary-button" id="generateButton" type="button">
+                <span aria-hidden="true">↻</span>
+                随机生成一杯
+              </button>
+            </div>
+
+            <article class="recipe-panel" id="recipePanel">
+              <div class="empty-state">
+                <img src="assets/hero-glass.svg" alt="">
+                <h2>先给一个感觉</h2>
+                <p>它会优先使用你酒柜里的材料，生成一杯能马上试做的配方。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="barView" aria-labelledby="barTitle">
+          <div class="section-title compact">
+            <p class="eyebrow">Inventory</p>
+            <h2 id="barTitle">我的酒柜</h2>
+          </div>
+          <form class="inventory-form" id="bottleForm">
+            <input type="hidden" id="editingId">
+            <label>
+              <span>名称</span>
+              <input id="bottleName" type="text" placeholder="例如：金酒、柠檬汁、汤力水" required>
+            </label>
+            <div class="inline-actions">
+              <button class="secondary-button" id="autoTagButton" type="button">
+                联网识别味道
+              </button>
+              <span class="helper-text" id="autoTagStatus">输入名称后可自动推荐标签</span>
+            </div>
+            <label>
+              <span>分类</span>
+              <select id="bottleCategory"></select>
+            </label>
+            <label>
+              <span>备注</span>
+              <input id="bottleNote" type="text" placeholder="品牌、剩余量、适合的味道">
+            </label>
+            <fieldset>
+              <legend>味道标签</legend>
+              <div class="tag-grid small" id="bottleTags"></div>
+            </fieldset>
+            <div class="form-actions">
+              <button class="secondary-button" id="cancelEditButton" type="button" hidden>取消编辑</button>
+              <button class="primary-button" type="submit">
+                <span aria-hidden="true">＋</span>
+                保存材料
+              </button>
+            </div>
+          </form>
+          <div class="inventory-list" id="inventoryList"></div>
+        </section>
+
+        <section class="view" id="savedView" aria-labelledby="savedTitle">
+          <div class="section-title compact">
+            <p class="eyebrow">Recipes</p>
+            <h2 id="savedTitle">收藏配方</h2>
+          </div>
+          <div class="saved-list" id="savedList"></div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav" aria-label="主导航">
+        <button class="nav-button active" data-view="inspireView" type="button">
+          <span aria-hidden="true">✦</span>
+          灵感
+        </button>
+        <button class="nav-button" data-view="barView" type="button">
+          <span aria-hidden="true">▤</span>
+          酒柜
+        </button>
+        <button class="nav-button" data-view="savedView" type="button">
+          <span aria-hidden="true">☆</span>
+          收藏
+        </button>
+      </nav>
+    </div>
+    <script src="app.js?v=34" defer></script>
+  </body>
+</html>
